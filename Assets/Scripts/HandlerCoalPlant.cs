@@ -12,6 +12,7 @@ public class HandlerCoalPlant : MonoBehaviour
 
     void Update()
     {
+        EnergyIncrease = BasicUpgrade.prodPerSec;
         InternalIncrease = EnergyIncrease;
         if (CreatingEnergy == false)
         {
