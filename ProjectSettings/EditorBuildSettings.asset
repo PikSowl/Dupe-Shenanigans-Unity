@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ClickerScene.unity
+    guid: 43759d6868f1dcb4eace6aa9cf9360c6
+  - enabled: 1
     path: Assets/Scenes/SplashScreen.unity
     guid: 7afb814c730ce7f44aef455b17e6753e
   - enabled: 1
     path: Assets/Scenes/Navigation.unity
     guid: 4d2009508919ea048bdcc780bf887dd6
-  - enabled: 1
-    path: Assets/Scenes/ClickerScene.unity
-    guid: 43759d6868f1dcb4eace6aa9cf9360c6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
