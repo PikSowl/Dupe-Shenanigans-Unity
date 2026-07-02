@@ -1,5 +1,9 @@
-using UnityEngine;
+using System;
 using YG;
+
+/// <summary>
+/// Controlls all operations with energy
+/// </summary>
 
 public class Energy : Controller
 {
@@ -10,7 +14,9 @@ public class Energy : Controller
 
     public void ClickProduce()
     {
-        Produce(YG2.saves.generatorLV);
+        int amountGenerated = YG2.saves.staticLV;
+        amountGenerated *= (int)Math.Pow(2, YG2.saves.dupeAnomalyLV);
+        Produce(amountGenerated);
     }
 
     public override void Produce(int amount)

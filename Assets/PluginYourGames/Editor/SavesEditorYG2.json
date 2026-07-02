@@ -5,12 +5,16 @@
     "floatValues": [],
     "intKeys": [],
     "intValues": [],
-    "idSave": 16,
-    "energy": 52,
+    "idSave": 339,
+    "energy": 12,
     "str": 0,
-    "strFromEnergyGained": 0,
+    "dupeAnomalyLV": 0,
+    "simonExperementLV": 0,
+    "speedExperementLV": 0,
     "simonHiScore": 0,
-    "fi1": 0,
-    "generatorLV": 1,
-    "coalPlantLV": 2
+    "staticLV": 1,
+    "coalPlantLV": 0,
+    "coalMineLV": 1,
+    "STRPrintLV": 0,
+    "ADPrintLV": 0
 }

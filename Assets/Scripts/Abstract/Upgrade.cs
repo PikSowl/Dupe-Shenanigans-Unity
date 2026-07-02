@@ -1,8 +1,14 @@
+using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
-using YG;
+using UnityEngine.UI;
+
+/// <summary>
+/// Abstract class for upgrades
+/// </summary>
+
+[RequireComponent(typeof(Button))]
 
 public abstract class Upgrade : MonoBehaviour
 {
@@ -10,32 +16,36 @@ public abstract class Upgrade : MonoBehaviour
 
     public int level = 0;
     public int cost = 1;
-    public int modifier = 0;
-    public Button UpgradeButton;
     public TMP_Text CostText;
 
+    Button upgradeButton;
     Energy energy;
     public GameObject energyController;
 
     private void Start()
     {
+        upgradeButton = GetComponent<Button>();
         energy = energyController.GetComponent<Energy>();
-        level = YG2.saves.coalPlantLV;
-        ChangeCost();
-        ChangeMod();
+        StatsUpdate();
     }
 
-    public abstract void ChangeCost();
+    public virtual void ToBasic()
+    {
+        level = 0;
+        StatsUpdate();
+    }
 
-    public abstract void ChangeMod();
+    /// <summary>
+    /// Needs to calculate cost and modifyer, change CostText, set level
+    /// </summary>
+    public abstract void StatsUpdate();
+
 
     public void Bought()
     {
         energy.Consume(cost);
         level += 1;
-        YG2.saves.coalPlantLV = level;
-        ChangeCost();
-        ChangeMod();
+        StatsUpdate();
         
         onBought.Invoke();
     }
@@ -45,11 +55,11 @@ public abstract class Upgrade : MonoBehaviour
     {
         if (energy.Amount() >= cost)
         {
-            UpgradeButton.interactable = true;
+            upgradeButton.interactable = true;
         }
         else
         {
-            UpgradeButton.interactable = false;
+            upgradeButton.interactable = false;
         }
     }
 }

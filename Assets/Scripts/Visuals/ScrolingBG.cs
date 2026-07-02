@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Scrolls image resource to make it "move"
+/// </summary>
+
 [RequireComponent(typeof(Image))]
-public class ScrolingBG : MonoBehaviour
+
+public class ScrollingBG : MonoBehaviour
 {
+
     public float speed;
     public Vector2 direction;
 

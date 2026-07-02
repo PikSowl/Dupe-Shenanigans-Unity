@@ -1,7 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using YG;
 
+/// <summary>
+/// Contains all auto generation logic
+/// </summary>
+
+[RequireComponent(typeof(Energy))]
 public class AutoGeneration : MonoBehaviour
 {
     public UnityEvent onUpdate;
@@ -13,7 +19,7 @@ public class AutoGeneration : MonoBehaviour
     private void Start()
     {
         energy = GetComponent<Energy>();
-        LoadAmountGenerated();
+        UpdateAmountGenerated();
         StartGeneration();
     }
 
@@ -22,14 +28,10 @@ public class AutoGeneration : MonoBehaviour
         return "" + amountGenerated;
     }
 
-    public void LoadAmountGenerated()
-    {
-        amountGenerated = 1 * YG2.saves.coalPlantLV;
-    }
-
     public void UpdateAmountGenerated()
     {
-        amountGenerated = 1 * YG2.saves.coalPlantLV;
+        amountGenerated = YG2.saves.coalMineLV * YG2.saves.coalPlantLV;
+        amountGenerated *= (int)Math.Pow(2, YG2.saves.dupeAnomalyLV);
         onUpdate.Invoke();
     }
 

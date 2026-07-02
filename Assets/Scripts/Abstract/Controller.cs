@@ -1,7 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
-using YG;
 
+/// <summary>
+/// Abstract class for ResourceControllers
+/// </summary>
+/// 
 public abstract class Controller : MonoBehaviour
 {
     public UnityEvent onConsume;

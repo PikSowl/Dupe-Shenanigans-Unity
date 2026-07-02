@@ -6,5 +6,6 @@ Localization v1.02
 PlayerStats v1.01
 QuitGameEvent v1.001
 RedefinePlayerPrefs v1.001
+RewardedAdv v1.011
 StickyAdv v1.0
 Storage v1.021
